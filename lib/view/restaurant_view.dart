@@ -472,7 +472,6 @@ class _RestaurantViewState extends State<RestaurantView> {
                                                                 .remove_circle_outline),
                                                             iconSize: 20,
                                                             onPressed: () {
-                                                              // quantity--;
                                                               restaurantController
                                                                       .cat6SubItemQty[
                                                                   index]--;
@@ -490,7 +489,6 @@ class _RestaurantViewState extends State<RestaurantView> {
                                                                 .add_circle_outline),
                                                             iconSize: 20,
                                                             onPressed: () {
-                                                              // quantity++;
                                                               restaurantController
                                                                       .cat6SubItemQty[
                                                                   index]++;
@@ -511,11 +509,10 @@ class _RestaurantViewState extends State<RestaurantView> {
                       padding: const EdgeInsets.only(
                           top: 10, left: 10, right: 10, bottom: 10),
                       child: ElevatedButton(
-                        child: Text('Place Order ' +
+                        child: Text('Submit ' +
                             restaurantController.total.toString()),
                         onPressed: () {
                           Get.snackbar("Order Success", "Order Placed Successfully");
-                          // restaurantController.total = 0;
                           setState(() {
                           });
                         },
@@ -526,23 +523,4 @@ class _RestaurantViewState extends State<RestaurantView> {
               )),
         ));
   }
-
-  // orderSuccess(BuildContext context) {
-  //   Widget okButton = TextButton(
-  //     child: const Text(
-  //       "Okay",
-  //     ),
-  //     onPressed: () async {
-  //       Navigator.of(context).pop();
-  //     },
-  //   );
-  //   showDialog(
-  //       context: context,
-  //       builder: (BuildContext context) => CupertinoAlertDialog(
-  //         title: const Text("Order Success!"),
-  //         content:
-  //         const Text("Order placed successfully"),
-  //         actions: [okButton],
-  //       ));
-  // }
 }
